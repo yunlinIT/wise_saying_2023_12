@@ -5,7 +5,6 @@ import java.util.List;
 import com.ws.wiseSaying.entity.WiseSaying;
 import com.ws.wiseSaying.repository.WiseSayingRepository;
 
-<<<<<<< HEAD
 public class WiseSayingService { // 서비스 클래스
 
 	private WiseSayingRepository wiseSayingRepository; // WiseSayingRepository 변수
@@ -35,36 +34,6 @@ public class WiseSayingService { // 서비스 클래스
 
 	public void modify(WiseSaying wiseSaying, String content, String author) { // 컨트롤러한테 입력받은 객체와 명언 작가 인자를 담아서
 		wiseSayingRepository.modify(wiseSaying, content, author); // 레포지토리 함수 호출하면서 인자 넘겨주기
-=======
-public class WiseSayingService {
-
-	private WiseSayingRepository wiseSayingRepository;
-
-	public WiseSayingService() {
-
-		wiseSayingRepository = new WiseSayingRepository();
-	}
-
-	public List<WiseSaying> findAll() {
-		return wiseSayingRepository.findAll();
-	}
-
-	public int write(String content, String author) {
-
-		return wiseSayingRepository.write(content, author);
-	}
-
-	public WiseSaying findById(int id) {
-		return wiseSayingRepository.findById(id);
-	}
-
-	public void remove(WiseSaying wiseSaying) {
-		wiseSayingRepository.remove(wiseSaying);
-	}
-
-	public void modify(WiseSaying wiseSaying, String content, String author) {
-		wiseSayingRepository.modify(wiseSaying, content, author);
->>>>>>> 089193c19ca6f4d5240fb50d02d4f2cb794d2930
 
 	}
 

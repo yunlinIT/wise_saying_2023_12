@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Rq == Request(요청)
-<<<<<<< HEAD
 public class Rq { //  Rq 클래스
 	private String actionCode; 
 	private Map<String, String> params; // Key값과 Value값이 둘다 String타입인 해쉬맵 선언
@@ -32,40 +31,10 @@ public class Rq { //  Rq 클래스
 			String key = paramStrBits[0]; // = 기준 앞에 조각이 key 값
 			String value = paramStrBits[1]; // = 기준 뒤에 조각이 value 값
 			params.put(key, value); // key, value 값을 params라는 해쉬맵에 저장
-=======
-public class Rq {
-	private String actionCode;
-	private Map<String, String> params;
-
-	public Rq(String cmd) {
-		String[] cmdBits = cmd.split("\\?", 2);
-
-		actionCode = cmdBits[0];
-
-		params = new HashMap<>();
-
-		if (cmdBits.length == 1) {
-			return;
-		}
-
-		String[] paramBits = cmdBits[1].split("&");
-
-		for (String paramStr : paramBits) {
-			String[] paramStrBits = paramStr.split("=", 2);
-
-			if (paramStrBits.length == 1) {
-				continue;
-			}
-
-			String key = paramStrBits[0];
-			String value = paramStrBits[1];
-			params.put(key, value);
->>>>>>> 089193c19ca6f4d5240fb50d02d4f2cb794d2930
 		}
 
 	}
 
-<<<<<<< HEAD
 	public String getActionCode() { // actionCode가 은닉화되어있어서 게터 함수로 actionCode를 리턴함
 		return actionCode;
 	}
@@ -81,23 +50,6 @@ public class Rq {
 
 		}
 		return defaultValue; // defaultValue -1을 리턴
-=======
-	public String getActionCode() {
-		return actionCode;
-	}
-
-	public String getParam(String name) {
-		return params.get(name);
-	}
-
-	public int getIntParam(String name, int defaultValue) {
-		try {
-			return Integer.parseInt(getParam(name));
-		} catch (NumberFormatException e) {
-
-		}
-		return defaultValue;
->>>>>>> 089193c19ca6f4d5240fb50d02d4f2cb794d2930
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.ws;
 
-<<<<<<< HEAD
 import com.ws.system.controller.SystemController; // SystemController 타입으로 systemController 객체 만들었으니까 import
 import com.ws.wiseSaying.controller.WiseSayingController; // WiseSayingController """
 
@@ -27,34 +26,6 @@ public class App {
 			case "종료":
 				systemController.exit();
 				system_status = 0; // system status 조건에일치 하지 않으니 명령어 그만 받고 실행 끝 
-=======
-import com.ws.system.controller.SystemController;
-import com.ws.wiseSaying.controller.WiseSayingController;
-
-public class App {
-
-	private byte system_status = 1;
-
-	public App() {
-
-	}
-
-	public void run() {
-		System.out.println("== 명언 앱 실행 ==");
-
-		SystemController systemController = new SystemController();
-		WiseSayingController wiseSayingController = new WiseSayingController();
-
-		while (system_status == 1) {
-			System.out.print("명령어 ) ");
-			String cmd = Container.getScanner().nextLine().trim();
-			Rq rq = new Rq(cmd);
-
-			switch (rq.getActionCode()) {
-			case "종료":
-				systemController.exit();
-				system_status = 0;
->>>>>>> 089193c19ca6f4d5240fb50d02d4f2cb794d2930
 				break;
 			case "등록":
 				wiseSayingController.write();
@@ -69,11 +40,7 @@ public class App {
 				wiseSayingController.modify(rq);
 				break;
 			default:
-<<<<<<< HEAD
 				System.out.println("존재하지 않는 명령어입니다"); // 조건문 중에 case에 그 어느것도 해당되지 않으면 출력
-=======
-				System.out.println("존재하지 않는 명령어입니다");
->>>>>>> 089193c19ca6f4d5240fb50d02d4f2cb794d2930
 				break;
 			}
 		}
