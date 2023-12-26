@@ -1,5 +1,6 @@
 package com.ws;
 
+import com.ws.export.controller.ExportController;
 import com.ws.system.controller.SystemController;
 import com.ws.wiseSaying.controller.WiseSayingController;
 
@@ -16,6 +17,7 @@ public class App {
 
 		SystemController systemController = new SystemController();
 		WiseSayingController wiseSayingController = new WiseSayingController();
+		ExportController exportController = new ExportController();
 
 		while (system_status == 1) {
 			System.out.print("명령어 ) ");
@@ -38,6 +40,9 @@ public class App {
 				break;
 			case "수정":
 				wiseSayingController.modify(rq);
+				break;
+			case "추출":
+				exportController.makeHtml(rq);
 				break;
 			default:
 				System.out.println("존재하지 않는 명령어입니다");
